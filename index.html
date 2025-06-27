@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <title>Radar An Ninh</title>
   <link rel="stylesheet" href="styles.css">
+
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+
+  <!-- Kiểm tra đăng nhập -->
+  <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn || isLoggedIn !== "true") {
+      window.location.href = "form-auth/login.html";  // chuyển hướng nếu chưa login
+    }
+  </script>
 </head>
 <body>
   <div class="header">

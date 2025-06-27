@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar An Ninh</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+</head>
+<body>
+  <h1>Radar Phát Hiện Xâm Nhập</h1>
+  <canvas id="radar" width="600" height="300"></canvas>
+
+  <div id="info">
+    <p>Góc quét: <span id="angle">0°</span></p>
+    <p>Khoảng cách: <span id="distance">0 cm</span></p>
+  </div>
+
+  <div id="history">
+    <h3>Lịch sử đo:</h3>
+    <ul id="history-list"></ul>
+  </div>
+
+
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
+                                                                                        

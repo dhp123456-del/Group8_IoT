@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<script>
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  if (!isLoggedIn || isLoggedIn !== "true") {
-    window.location.href = "form-auth/login.html";  // ✅ Đúng đường dẫn thư mục
-  }
-</script>
-localStorage.setItem("isLoggedIn", "true");
-window.location.href = "../index.html"; // hoặc chỉ "index.html" nếu bạn muốn quay lại
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,6 +7,13 @@ window.location.href = "../index.html"; // hoặc chỉ "index.html" nếu bạn
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+
+  <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn || isLoggedIn !== "true") {
+      window.location.href = "form-auth/login.html"; // chuyển hướng nếu chưa login
+    }
+  </script>
 </head>
 <body>
   <h1>Radar Phát Hiện Xâm Nhập</h1>
@@ -31,11 +29,6 @@ window.location.href = "../index.html"; // hoặc chỉ "index.html" nếu bạn
     <ul id="history-list"></ul>
   </div>
 
-
-
   <script src="script.js"></script>
-
-
 </body>
 </html>
-                                                                                        

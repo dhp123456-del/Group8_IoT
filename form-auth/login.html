@@ -4,50 +4,8 @@
   <meta charset="UTF-8">
   <title>Đăng nhập / Đăng ký</title>
   <link rel="stylesheet" href="style.css">
-  <script src="users.js"></script> <!-- danh sách tài khoản mẫu -->
-  <script defer>
-    let isLogin = true;
-
-    // Toggle giữa login và register
-    function toggleForm() {
-      isLogin = !isLogin;
-      document.getElementById("form-title").innerText = isLogin ? "Đăng nhập" : "Đăng ký";
-      document.getElementById("toggle-text").innerHTML = isLogin
-        ? 'Chưa có tài khoản? <a href="#" onclick="toggleForm()">Đăng ký</a>'
-        : 'Đã có tài khoản? <a href="#" onclick="toggleForm()">Đăng nhập</a>';
-    }
-
-    // Xử lý submit form
-    window.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("auth-form").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-
-        if (isLogin) {
-          // Login
-          const user = users.find(u => u.email === email && u.password === password);
-          if (user) {
-            localStorage.setItem("isLoggedIn", "true");
-            window.location.href = "../index.html";
-          } else {
-            alert("Sai email hoặc mật khẩu.");
-          }
-        } else {
-          // Register
-          const exists = users.find(u => u.email === email);
-          if (exists) {
-            alert("Email đã tồn tại.");
-          } else {
-            users.push({ email, password });
-            alert("Đăng ký thành công. Hãy đăng nhập.");
-            toggleForm();
-          }
-        }
-      });
-    });
-  </script>
+  <script src="users.js"></script>
+  <script src="login.js" defer></script>
 </head>
 <body>
   <div class="container">

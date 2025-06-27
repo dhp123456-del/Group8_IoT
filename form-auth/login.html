@@ -25,12 +25,10 @@
       const password = document.getElementById("password").value;
 
       if (email && password) {
-        localStorage.setItem("isLoggedIn", "true");
-        window.location.href = "/Group8_IoT/index.html"; // ✅ quay lại trang chính
-      } else {
-        alert("Thông tin không hợp lệ");
-      }
-    }
+  localStorage.setItem("isLoggedIn", "true");
+  window.location.href = "/Group8_IoT/index.html"; // ✅ chính xác nhất trên GitHub Pages
+}
+
   </script>
       <p id="toggle-text">
         Chưa có tài khoản? <a href="#" onclick="toggleForm()">Đăng ký</a>

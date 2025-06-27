@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<script>
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (!isLoggedIn || isLoggedIn !== "true") {
+    window.location.href = "form-auth/login.html";  // ✅ Đúng đường dẫn thư mục
+  }
+</script>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">

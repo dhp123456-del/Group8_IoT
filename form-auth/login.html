@@ -2,31 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Đăng nhập</title>
+  <title>Đăng nhập / Đăng ký</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="users.js"></script>
+  <script src="login.js" defer></script>
 </head>
 <body>
-  <h2>Đăng nhập</h2>
-  <form onsubmit="handleLogin(event)">
-    <input type="text" placeholder="Email" id="email" required><br>
-    <input type="password" placeholder="Password" id="password" required><br>
-    <button type="submit">Đăng nhập</button>
-  </form>
+  <div class="container">
+    <div class="form-box" id="form-box">
+      <h2 id="form-title">Đăng nhập</h2>
+      <form id="auth-form">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Mật khẩu" required>
+        <button type="submit">Xác nhận</button>
+      </form>
+      <p id="toggle-text">
+        Chưa có tài khoản? <a href="#" onclick="toggleForm()">Đăng ký</a>
+      </p>
+    </div>
+  </div>
 
-  <script>
-    function handleLogin(event) {
-      event.preventDefault();
-
-      // Giả sử luôn đúng, bạn có thể thay bằng validate thực tế
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      if (email && password) {
-        localStorage.setItem("isLoggedIn", "true");
-        window.location.href = "../index.html"; // ✅ quay lại trang chính
-      } else {
-        alert("Thông tin không hợp lệ");
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -7,26 +7,27 @@
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
-
-  <script>
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (!isLoggedIn || isLoggedIn !== "true") {
-      window.location.href = "form-auth/login.html"; // chuyển hướng nếu chưa login
-    }
-  </script>
 </head>
 <body>
-  <h1>Radar Phát Hiện Xâm Nhập</h1>
-  <canvas id="radar" width="600" height="300"></canvas>
-
-  <div id="info">
-    <p>Góc quét: <span id="angle">0°</span></p>
-    <p>Khoảng cách: <span id="distance">0 cm</span></p>
+  <div class="header">
+    <img src="https://d30mzt1bxg5llt.cloudfront.net/public/uploads/images/_signatoryLogo/Logo-VNU-IS-2.jpg" alt="Logo" class="logo">
+    <h1>Radar Phát Hiện Xâm Nhập</h1>
   </div>
 
-  <div id="history">
-    <h3>Lịch sử đo:</h3>
-    <ul id="history-list"></ul>
+  <div class="container">
+    <div class="left">
+      <canvas id="radar" width="600" height="300"></canvas>
+    </div>
+    <div class="right">
+      <div id="info">
+        <p>🔁 Góc quét: <span id="angle">0°</span></p>
+        <p>📏 Khoảng cách: <span id="distance">0 cm</span></p>
+      </div>
+      <div id="history">
+        <h3>🕒 Lịch sử đo:</h3>
+        <ul id="history-list"></ul>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

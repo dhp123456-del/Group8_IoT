@@ -17,19 +17,21 @@
         <button type="submit">Xác nhận</button>
       </form>
       <script>
-    function handleLogin(event) {
-      event.preventDefault();
+  function handleLogin(event) {
+    event.preventDefault();
 
-      // Giả sử luôn đúng, bạn có thể thay bằng validate thực tế
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-      if (email && password) {
-  localStorage.setItem("isLoggedIn", "true");
-  window.location.href = "/Group8_IoT/index.html"; // ✅ chính xác nhất trên GitHub Pages
-}
+    if (email && password) {
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "/Group8_IoT/index.html"; // ✅ chính xác trên GitHub Pages
+    } else {
+      alert("Thông tin không hợp lệ");
+    }
+  }
+</script>
 
-  </script>
       <p id="toggle-text">
         Chưa có tài khoản? <a href="#" onclick="toggleForm()">Đăng ký</a>
       </p>

@@ -43,10 +43,13 @@ h1 {
 }
 
 #radar {
+  width: 100%;
+  max-width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   border: 2px solid lime;
   border-radius: 10px;
 }
+
 
 .right {
   width: 50%;
@@ -71,7 +74,7 @@ h1 {
 #history-list {
   list-style-type: none;
   padding-left: 0;
-  max-height: 300px;
+  max-height: 200px;
   overflow-y: auto;
 }
 
@@ -80,3 +83,4 @@ h1 {
   padding: 5px 0;
   border-bottom: 1px dashed lime;
 }
+

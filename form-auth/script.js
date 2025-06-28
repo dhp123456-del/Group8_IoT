@@ -1,3 +1,4 @@
+
 let isLogin = true;
 
 function toggleForm() {
@@ -14,15 +15,3 @@ function toggleForm() {
     toggleText.innerHTML = `Đã có tài khoản? <a href="#" onclick="toggleForm()">Đăng nhập</a>`;
   }
 }
-
-document.getElementById("auth-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  if (isLogin) {
-    window.location.href = "/index.html";
-  } else {
-    window.location.href = "login.html";
-  }
-});

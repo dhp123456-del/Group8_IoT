@@ -4,29 +4,55 @@
   <meta charset="UTF-8">
   <title>Radar An Ninh</title>
   <link rel="stylesheet" href="styles.css">
+
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+
+  <!-- Kiểm tra đăng nhập -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      if (!isLoggedIn || isLoggedIn !== "true") {
+        window.location.href = "form-auth/login.html";
+      }
+    });
+
+    // Hàm logout
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "form-auth/login.html";
+    }
+  </script>
 </head>
+
 <body>
-  <h1>Radar Phát Hiện Xâm Nhập</h1>
-  <canvas id="radar" width="600" height="300"></canvas>
-
-  <div id="info">
-    <p>Góc quét: <span id="angle">0°</span></p>
-    <p>Khoảng cách: <span id="distance">0 cm</span></p>
+  <div class="header">
+  <div class="header-left">
+    <img src="https://reviewedu.net/wp-content/uploads/2022/09/VNU-IS-logo-2.png" alt="Logo" class="logo">
+    <h1>Group 8_Radar Phát Hiện Xâm Nhập_Nguyen Van Toan, Ly Tran Huy, Dinh Hoang Phuong, To Dai Duong</h1>
   </div>
+  <button onclick="logout()" class="logout-btn">Đăng xuất</button>
+</div>
 
-  <div id="history">
-    <h3>Lịch sử đo:</h3>
-    <ul id="history-list"></ul>
+
+  <div class="container">
+    <div class="left">
+      <canvas id="radar" width="800" height="400"></canvas>
+    </div>
+    <div class="right">
+      <div id="info">
+        <p>🔁 Góc quét: <span id="angle">0°</span></p>
+        <p>📏 Khoảng cách: <span id="distance">0 cm</span></p>
+      </div>
+      <div id="history">
+        <h3>🕒 Lịch sử đo:</h3>
+        <ul id="history-list"></ul>
+      </div>
+    </div>
   </div>
-
-
 
   <script src="script.js"></script>
-
-
 </body>
 </html>
-                                                                                        

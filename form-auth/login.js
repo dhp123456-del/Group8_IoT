@@ -7,13 +7,12 @@ document.getElementById("auth-form").addEventListener("submit", function (e) {
   const user = users.find(u => u.email === email && u.password === password);
 
   if (user) {
-    // Hiển thị vòng xoay loading
     showLoading();
 
-    // Giả lập loading trong 3 giây, rồi chuyển trang
     setTimeout(() => {
       localStorage.setItem("loggedInUser", JSON.stringify(user));
-      window.location.href = "index.html";
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "../index.html";
     }, 3000);
   } else {
     alert("Sai tài khoản hoặc mật khẩu!");

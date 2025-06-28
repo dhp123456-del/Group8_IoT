@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<script>
-  window.location.href = "form-auth/login.html";
-</script>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Radar An Ninh</title>
+  <title>Welcome to our project</title>
+  <link rel="icon" href="https://reviewedu.net/wp-content/uploads/2022/09/VNU-IS-logo-2.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
-  <script>
+   <script>
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (!isLoggedIn || isLoggedIn !== "true") {
       window.location.href = "form-auth/login.html"; // chuyển hướng nếu chưa login
@@ -26,7 +23,7 @@
 
   <div class="container">
     <div class="left">
-      <canvas id="radar" width="800" height="400"></canvas>
+      <canvas id="radar" width="1100" height="550"></canvas>
     </div>
     <div class="right">
       <div id="info">

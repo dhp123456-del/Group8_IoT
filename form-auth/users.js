@@ -1,14 +1,5 @@
-<<<<<<< HEAD
+const users = [
+  { email: "admin@example.com", password: "123456" },
+  { email: "G8_iot@gmail.com", password: "123" }
+];
 
-// users.js
-const users = [
-  { email: "admin@example.com", password: "123456" },
-  { email: "user@example.com", password: "password" }
-];
-=======
-// users.js
-const users = [
-  { email: "admin@example.com", password: "123456" },
-  { email: "user@example.com", password: "password" }
-];
->>>>>>> master

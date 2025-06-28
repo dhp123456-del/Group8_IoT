@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <title>Đăng nhập / Đăng ký</title>
   <link rel="stylesheet" href="style.css">
-  <script src="users.js"></script>
-  <script src="login.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -16,28 +14,14 @@
         <input type="password" id="password" placeholder="Mật khẩu" required>
         <button type="submit">Xác nhận</button>
       </form>
-      <script>
-  function handleLogin(event) {
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (email && password) {
-      localStorage.setItem("isLoggedIn", "true");
-     window.location.href = "https://dhp123456-del.github.io/Group8_IoT/index.html"; // ✅ chính xác trên GitHub Pages
-    } else {
-      alert("Thông tin không hợp lệ");
-    }
-  }
-</script>
 
       <p id="toggle-text">
         Chưa có tài khoản? <a href="#" onclick="toggleForm()">Đăng ký</a>
       </p>
     </div>
   </div>
-
+  <script src="users.js"></script>
   <script src="script.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>
